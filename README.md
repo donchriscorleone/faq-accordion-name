@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [FrontendMentor](https://your-solution-url.com)
-- Live Site URL: [GitHub Pages](https://your-live-site-url.com)
+- Solution URL: [FrontendMentor](https://www.frontendmentor.io/solutions/mobile-first-approach-using-plain-css-and-javascript-dOs_2icXqE)
+- Live Site URL: [GitHub Pages](https://donchriscorleone.github.io/faq-accordion-name)
 
 ## My process
 
