@@ -1,0 +1,252 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --dark-pink: hsl(276, 94%, 73%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+}
+
+@font-face {
+    font-family: "Work Sans", sans-serif;
+    src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    background-color: var(--white);
+}
+
+/* Icon */
+
+.icon {
+    --icon-size: 2rem;
+    display: block;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    border-radius: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon > img {
+    height: 100%;
+}
+
+/* Accordion Item */
+
+.accordion-header .accordion-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+    border: 0;
+    background-color: transparent;
+}
+
+.accordion-header .accordion-btn:hover {
+    cursor: pointer;
+}
+
+.accordion-header .accordion-btn:hover .accordion-btn__text {
+    color: var(--dark-pink);
+    outline: 0;
+}
+
+.accordion-btn .accordion-btn__text {
+    color: var(--dark-purple);
+    font-weight: 700;
+    transition: color .35s;
+}
+
+.accordion-body {
+    color: var(--grayish-purple);
+}
+
+.accordion-body > * {
+    line-height: 1.75;
+}
+
+.accordion-collapse {
+    transition: all .35s;
+    overflow: hidden;
+}
+
+.accordion-collapse.hide {
+    max-height: 0;
+}
+
+.accordion-collapse.show {
+    max-height: 100vw;
+}
+
+/* Body */
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--light-pink);
+    position: relative;
+}
+
+body::before {
+    content: '';
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+
+    background-image: url('./assets/images/background-pattern-mobile.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 850px){
+    body::before {
+        background-image: url('./assets/images/background-pattern-desktop.svg');
+    }
+}
+
+/* Card */
+
+.card {
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 10px;
+
+    max-width: 300px;
+}
+
+.card-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+@media screen and (min-width: 850px){
+    .card {
+        max-width: 450px;
+    }
+
+    .card-header h1 {
+        font-size: 2.3rem;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .card {
+        max-width: 650px;
+        padding: 2.5rem;
+    }
+
+    .card-header h1 {
+        font-size: 3rem;
+    }
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.accordion > .accordion-item:not(:last-child) {
+    border-bottom: 1px solid var(--light-pink);
+    padding-bottom: 1rem;
+}
+
+.accordion > .accordion-item .accordion-btn__text {
+    text-align: left;
+    display: inline-block;
+    max-width: 70%;
+
+    font-size: .9rem;
+}
+
+.accordion > .accordion-item .accordion-body {
+    font-size: .82rem;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+
+@media screen and (min-width: 850px) {
+    .accordion {
+        gap: 1.5rem;
+    }
+    
+    .accordion > .accordion-item:not(:last-child) {
+        padding-bottom: 1.2rem;
+    }
+    
+    .accordion > .accordion-item .accordion-btn__text {
+        max-width: 90%;
+        font-size: 1rem;
+    }
+    
+    .accordion > .accordion-item .accordion-body {
+        font-size: .82rem;
+        margin-top: 1rem;
+        font-weight: 600;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .accordion {
+        gap: 1.75rem;
+    }
+    
+    .accordion > .accordion-item:not(:last-child) {
+        padding-bottom: 1.4rem;
+    }
+    
+    .accordion > .accordion-item .accordion-btn__text {
+        font-size: 1.5rem;
+    }
+    
+    .accordion > .accordion-item .accordion-body {
+        font-size: 1rem;
+        margin-top: 1.3rem;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--dark-purple);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--grayish-purple);
+}
+
+footer ul {
+    display: flex;
+    gap: .75rem;
+    list-style: none;
+}
